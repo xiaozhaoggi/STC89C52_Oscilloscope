@@ -1,0 +1,6 @@
+"main.obj",
+"lcd.obj",
+"adc0809.obj",
+"Keyscan.obj" 
+TO "template" 
+RAMSIZE(256) 

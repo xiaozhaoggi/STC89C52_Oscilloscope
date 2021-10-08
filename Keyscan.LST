@@ -1,0 +1,90 @@
+C51 COMPILER V9.01   KEYSCAN                                                               04/16/2021 17:16:18 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE KEYSCAN
+OBJECT MODULE PLACED IN Keyscan.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Keyscan.c LARGE OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "Keyscan.h"
+   2          #include "adc0809.h"
+   3          
+   4          /**************°´¼üÉ¨Ãè³ÌÐò****************/
+   5          void Key_Scan(unsigned char *keyValue)
+   6          {
+   7   1        unsigned char i;
+   8   1        if(!KEY1)
+   9   1        {
+  10   2          Delay10Ms(1);
+  11   2          if(!KEY1)
+  12   2          {
+  13   3            *keyValue = 0x10;
+  14   3            i=0;
+  15   3            while(i<50 && !KEY1)
+  16   3            {
+  17   4              Delay10Ms(1);
+  18   4              i++;
+  19   4            }
+  20   3          }
+  21   2        }
+  22   1        if(!KEY2)
+  23   1        {
+  24   2          Delay10Ms(1);
+  25   2          if(!KEY2)
+  26   2          {
+  27   3            *keyValue = 0x20;
+  28   3            i=0;
+  29   3            while(i<50 && !KEY2)
+  30   3            {
+  31   4              Delay10Ms(1);
+  32   4              i++;
+  33   4            }
+  34   3          }
+  35   2        }
+  36   1        if(!KEY3)
+  37   1        {
+  38   2          Delay10Ms(1);
+  39   2          if(!KEY3)
+  40   2          {
+  41   3            *keyValue = 0x30;
+  42   3            i=0;
+  43   3            while(i<50 && !KEY3)
+  44   3            {
+  45   4              Delay10Ms(1);
+  46   4              i++;
+  47   4            }
+  48   3          }
+  49   2        }    
+  50   1        if(!KEY4)
+  51   1        {
+  52   2          Delay10Ms(1);
+  53   2          if(!KEY4)
+  54   2          {
+  55   3            *keyValue = 0x40;
+C51 COMPILER V9.01   KEYSCAN                                                               04/16/2021 17:16:18 PAGE 2   
+
+  56   3            i=0;
+  57   3            while(i<50 && !KEY4)
+  58   3            {
+  59   4              Delay10Ms(1);
+  60   4              i++;
+  61   4            }
+  62   3          }
+  63   2        }
+  64   1        
+  65   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    236    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       4
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
